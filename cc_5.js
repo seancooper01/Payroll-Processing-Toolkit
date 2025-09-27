@@ -3,10 +3,10 @@
 
 // Step 2
 let employees = [
-    {name: "Joe Shmo", hourlyRate: 20, hoursWorked: 40},
+    {name: "Joe Shmo", hourlyRate: 20, hoursWorked: 50},
     {name: "Karen Hilt", hourlyRate: 15, hoursWorked: 30},
     {name: "Josh Tho", hourlyRate: 32, hoursWorked: 35},
-    {name: "Martin Hank", hourlyRate: 12, hoursWorked: 25},
+    {name: "Martin Hank", hourlyRate: 12, hoursWorked: 55},
 ];
 console.table(employees) // table for employees
 
@@ -32,4 +32,28 @@ function calcTaxes(grossPay) {
 };
 
 // Step 6
+function processPayroll(employee) {
+    let basePay = calcBasePay(employee.hourlyRate, employee.hoursWorked);
+    let overtimePay = calcOTPay(employee.hourlyRate, employee.hoursWorked);
+    let grossPay = basePay + overtimePay;
+    let taxes = calcTaxes(grossPay);
+    let netPay = grossPay - taxes; 
+
+    return {
+        name: employee.name,
+        basePay: basePay,
+        overtimePay: overtimePay, 
+        grossPay: grossPay,
+        netPay: netPay,
+        taxes: taxes
+    };
+}
+/* test step 6
+console.log('Step 6 Testting:');
+let testEmployee = (employees[0]);
+console.log(processPayroll(testEmployee));
+*/ 
+
+
+
 // Code goes here
