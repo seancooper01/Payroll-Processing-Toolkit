@@ -14,7 +14,7 @@ console.table(employees) // table for employees
 let calcBasePay = (rate, hours) => 
     rate * Math.min(hours, 40);
 
-console.log(` $20 an hour for 40 hours: $${calcBasePay(20, 40)}`); // test function
+console.log(`$20 an hour for 40 hours: $${calcBasePay(20, 40)}`); // test function
 
 // Step 4
 function calcOTPay(rate,hours) {
@@ -26,4 +26,10 @@ function calcOTPay(rate,hours) {
 }
 console.log(`OT pay for 10 hours @ $40 an hour: $${calcOTPay(40,50)} `); // test function
 
+// Step 5
+function calcTaxes(grossPay) {
+    return grossPay * 0.15; // returns tax amount 
+};
+
+// Step 6
 // Code goes here
