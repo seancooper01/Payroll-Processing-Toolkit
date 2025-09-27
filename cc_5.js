@@ -54,6 +54,20 @@ let testEmployee = (employees[0]);
 console.log(processPayroll(testEmployee));
 */ 
 
+// Step 7 
+for (let i=0; i<employees.length; i++) {
+    let record = processPayroll(employees[i]);
 
+   // console.log(record); test record
+
+   console.log(
+    `${record.name}
+    Base Pay: $${record.basePay.toFixed(2)} +
+    Overtime: $${record.overtimePay.toFixed(2)} =
+    Gross Pay: $${record.grossPay.toFixed(2)} - Taxes: $${record.taxes.toFixed(2)} = 
+    Net Pay: $${record.netPay.toFixed(2)}
+    `
+   )
+}; 
 
 // Code goes here
